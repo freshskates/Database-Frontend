@@ -9,16 +9,16 @@ router.get("/getAllBooks", async (req, res, next) => {
   res.render("allBooks", { data });
 });
 
-router.get("/query1", async (req, res, next) => {
+router.get("/querySelect/:id(\\d)", async (req, res, next) => {
   let { query } = req.body;
   query = "Animal Farm";
-  let data = await Engine.Query1(query);
+  let data = await Engine.querySelect(req.params.id);
   debugPrinter.printSuccess(JSON.stringify(data));
   res.render("query1", { data });
 });
 
 router.get("/", async (req, res, next) => {
-  let data = await Engine.getAllBooks();
-  res.render("index", { data });
+  let data = await Engine.querySelect(0);
+  res.render("index", {data});
 });
 module.exports = router;
