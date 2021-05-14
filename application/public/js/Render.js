@@ -1,4 +1,9 @@
 const queryOutput = document.getElementById("output");
+const query1_input = document.getElementById("query1_input");
+
+const defaults = {
+  1: "Animal Farm",
+};
 
 const tableHead = head => {
   let headers = "";
@@ -56,7 +61,13 @@ const Factory = data => Builder(tableHead(Object.keys(data[0])), tableData(data)
 
 const Controller = async id => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/querySelect/${id}`);
+    let query = "null";
+    if (id in defaults) {
+      query = document.getElementById(`query${id}_input`).value;
+      if (!(query && query.length)) query = defaults[id];
+    }
+
+    const response = await axios.get(`http://localhost:3000/api/querySelect/${id}/${query}`);
     Factory(response.data);
   } catch (e) {
     console.log(`Status: Failed\nEndpoint: /api/querySelect/${id}`);

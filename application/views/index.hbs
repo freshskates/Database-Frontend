@@ -14,7 +14,13 @@
             <div class="card-body">
                 <h5 class="card-title">See remaining stock of checked out books.</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="#" class="btn btn-primary" onclick="Controller(1)">Select Query</a>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" onclick="Controller(1)" type="button">Search</button>
+                </div>
+                <input type="text" class="form-control" id="query1_input" placeholder="Animal Farm" aria-label="" aria-describedby="basic-addon1">
+                </div>
+                {{!-- <a href="#" class="btn btn-primary" onclick="Controller(1)"></a>Select Query</a> --}}
             </div>
         </div>
     </div>

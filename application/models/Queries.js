@@ -30,7 +30,7 @@ INNER JOIN authored ON authored.book_id = book.book_id
 INNER JOIN author ON author.author_id = authored.author_id
 GROUP BY book.title , author_name) AS stock ON checked_out.title = stock.title
     AND checked_out.author_name = checked_out.author_name
-HAVING checked_out.title LIKE '%Animal Farm%';`;
+HAVING checked_out.title LIKE ?;`;
 
 Builder.query2 = `SELECT
     book.title AS title, 
