@@ -1,18 +1,20 @@
-{{!-- <div class="container center">
-    <button href="/querySelect/1" type="button" class="btn btn-primary">Query 1</button>
-    <button href="/querySelect/2" type="button" class="btn btn-primary">Query 2</button>
-    <button href="/querySelect/3" type="button" class="btn btn-primary">Query 3</button>
-    <button href="/querySelect/4" type="button" class="btn btn-primary">Query 4</button>
-    <button href="/querySelect/5" type="button" class="btn btn-primary">Query 5</button>
-</div> --}}
 <br>
 <div class="row mx-auto cont">
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body">
+                <h5 class="card-title">View All Books</h5>
+                <p class="card-text">Query will be ran through mysql</p>
+                <a href="#" class="btn btn-primary" onclick="Controller(0)">Select Query</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
                 <h5 class="card-title">See remaining stock of checked out books.</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="/querySelect/1" class="btn btn-primary">Select Query</a>
+                <a href="#" class="btn btn-primary" onclick="Controller(1)">Select Query</a>
             </div>
         </div>
     </div>
@@ -21,7 +23,7 @@
             <div class="card-body">
                 <h5 class="card-title">View max number of check out renewals by book.</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="/querySelect/2" class="btn btn-primary">Select Query</a>
+                <a href="#" class="btn btn-primary" onclick="Controller(2)">Select Query</a>
             </div>
         </div>
     </div>
@@ -30,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title">See which members still have books due (checked out)</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="/querySelect/3" class="btn btn-primary">Select Query</a>
+                <a href="#" class="btn btn-primary" onclick="Controller(3)">Select Query</a>
             </div>
         </div>
     </div>
@@ -39,7 +41,7 @@
             <div class="card-body">
                 <h5 class="card-title">Choose available books that are in stock of a particular genre</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="/querySelect/4" class="btn btn-primary">Select Query</a>
+                <a href="#" class="btn btn-primary" onclick="Controller(4)">Select Query</a>
             </div>
         </div>
     </div>
@@ -48,8 +50,10 @@
             <div class="card-body">
                 <h5 class="card-title">Choose available books that are in stock of a particular genre</h5>
                 <p class="card-text">A Variant using keyword ANY</p>
-                <a href="/querySelect/5" class="btn btn-primary">Select Query</a>
+                <a href="#" class="btn btn-primary" onclick="Controller(5)">Select Query</a>
             </div>
         </div>
     </div>
+</div>
+<div id="output">
 </div>
