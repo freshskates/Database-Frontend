@@ -2,7 +2,6 @@ const db = require("../config/database");
 const { getQuery } = require("./Queries");
 const data = {
   normal: {
-    4: true,
     5: true,
   },
 };

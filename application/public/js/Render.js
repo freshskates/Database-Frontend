@@ -3,7 +3,6 @@ const query1_input = document.getElementById("query1_input");
 
 const defaults = {
   1: "Animal Farm",
-  4: "Fantasy",
   5: "Young Adult",
 };
 
