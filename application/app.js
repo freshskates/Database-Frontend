@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./controllers/routes/index");
 const apiRouter = require("./controllers/routes/api");
-
+const cors = require("cors");
 const app = express();
 app.engine(
   "hbs",
@@ -16,6 +16,7 @@ app.engine(
   })
 );
 
+app.use(cors());
 app.set("view engine", "hbs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
