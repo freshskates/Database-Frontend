@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./controllers/routes/index");
 const apiRouter = require("./controllers/routes/api");
+const expressip = require("express-ip");
 const cors = require("cors");
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
+app.use(expressip().getIpInfoMiddleware);
 app.use(cors());
 app.set("view engine", "hbs");
 app.use(express.json());

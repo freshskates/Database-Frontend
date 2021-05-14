@@ -89,8 +89,8 @@ FROM project.book AS b
 WHERE NOT b.book_id = ANY
   (SELECT co.book_id
   FROM project.checks_out AS co) and genre=?`;
-
-const Factory = { 0: Builder.getAll, 1: Builder.query1, 2: Builder.query2, 3: Builder.query3, 4: Builder.query4, 5: Builder.query5 };
+Builder.query6 = `SELECT * FROM author;`;
+const Factory = { 0: Builder.getAll, 1: Builder.query1, 2: Builder.query2, 3: Builder.query3, 4: Builder.query4, 5: Builder.query5, 6: Builder.query6 };
 
 const getQuery = number => {
   if (number > Factory.length) return null;
