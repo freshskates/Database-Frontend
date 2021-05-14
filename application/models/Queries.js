@@ -60,13 +60,13 @@ FROM project.book AS b
 WHERE NOT EXISTS
   (SELECT *
   FROM project.checks_out AS co
-  WHERE co.book_id = b.book_id)`;
+  WHERE co.book_id = b.book_id) and genre=?`;
 
 Builder.query5 = `SELECT b.*
 FROM project.book AS b
-WHERE b.book_id <> ANY
+WHERE NOT b.book_id = ANY
   (SELECT co.book_id
-  FROM project.checks_out AS co)`;
+  FROM project.checks_out AS co) and genre=?`;
 
 const Factory = { 0: Builder.getAll, 1: Builder.query1, 2: Builder.query2, 3: Builder.query3, 4: Builder.query4, 5: Builder.query5 };
 

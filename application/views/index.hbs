@@ -46,7 +46,13 @@
             <div class="card-body">
                 <h5 class="card-title">Choose available books that are in stock of a particular genre</h5>
                 <p class="card-text">Query will be ran through mysql</p>
-                <a href="#" class="btn btn-primary" onclick="Controller(4)">Select Query</a>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" onclick="Controller(4)" type="button">Search</button>
+                </div>
+                    <input type="text" class="form-control" id="query4_input" placeholder="Fantasy" aria-label="" aria-describedby="basic-addon1">
+                </div>
+                {{!-- <a href="#" class="btn btn-primary" onclick="Controller(4)">Select Query</a> --}}
             </div>
         </div>
     </div>
@@ -54,8 +60,13 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Choose available books that are in stock of a particular genre</h5>
-                <p class="card-text">A Variant using keyword ANY</p>
-                <a href="#" class="btn btn-primary" onclick="Controller(5)">Select Query</a>
+                <p class="card-text">A Variant using keyword ANY</p>                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" onclick="Controller(5)" type="button">Search</button>
+                </div>
+                <input type="text" class="form-control" id="query5_input" placeholder="Young Adult" aria-label="" aria-describedby="basic-addon1">
+                </div>
+                {{!-- <a href="#" class="btn btn-primary" onclick="Controller(5)">Select Query</a> --}}
             </div>
         </div>
     </div>

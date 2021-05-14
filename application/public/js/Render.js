@@ -3,6 +3,8 @@ const query1_input = document.getElementById("query1_input");
 
 const defaults = {
   1: "Animal Farm",
+  4: "Fantasy",
+  5: "Young Adult",
 };
 
 const tableHead = head => {
@@ -66,9 +68,14 @@ const Controller = async id => {
       query = document.getElementById(`query${id}_input`).value;
       if (!(query && query.length)) query = defaults[id];
     }
-
+    console.log(`
+    Sending query: http://localhost:3000/api/querySelect/${id}/${query}\n
+    ID: ${id}\n
+    Query: ${query}
+    `);
     const response = await axios.get(`http://localhost:3000/api/querySelect/${id}/${query}`);
-    Factory(response.data);
+    console.log(response.data.length);
+    Factory(response.data.length > 0 ? response.data : [{ results: "N/A", status: "Not Found" }]);
   } catch (e) {
     console.log(`Status: Failed\nEndpoint: /api/querySelect/${id}`);
   }
