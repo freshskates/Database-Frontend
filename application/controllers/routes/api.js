@@ -26,7 +26,13 @@ router.post("/createAuthor", async (req, res) => {
   console.log(nationality);
   console.log(DOB);
   let r = await Engine.createAuthor(name, middle, last, nationality, DOB);
-  res.render("create", { message: "sucesss", unique: "Upload", render_js_files: ["Render"], nav: true });
+  let error = true;
+  let message = "Error Creating Author";
+  if (r) {
+    message = `Author ${name} ${middle} ${last} has been Created`;
+    error = false;
+  }
+  res.render("create", { message, unique: "Upload", render_js_files: ["Render"], nav: true, error });
 });
 
 module.exports = router;

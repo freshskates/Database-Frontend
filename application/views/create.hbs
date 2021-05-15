@@ -2,7 +2,11 @@
 <form action="/api/createAuthor" method="POST" enctype="application/x-www-form-urlencoded">
 <br>
     {{#if message}}
+    {{#if error}}
+    <div class="alert alert-danger" role="alert">
+    {{else}}
     <div class="alert alert-success" role="alert">
+    {{/if}}
     {{message}}
     </div>
     {{/if }}

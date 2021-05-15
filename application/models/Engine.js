@@ -49,7 +49,7 @@ Engine.createAuthor = async (name, middle, last, nationality, DOB) => {
     console.log("Creating a user");
     let base = "INSERT INTO author (`author_first_name`, `author_middle_name`, `author_last_name`, `nationality`, `author_dob`) VALUES (?,?,?,?,?)";
     let result = await db.query(base, [name, middle, last, nationality, DOB]);
-    return !(result && result.length);
+    return result;
   } catch (err) {
     return null;
   }
